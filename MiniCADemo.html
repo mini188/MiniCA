@@ -1,0 +1,33 @@
+<html class="chrome webkit"><head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+<title>MiniCA demo</title>
+<head>
+<script type="text/javascript" src="MiniCA-1.0.js"></script>
+	<script type="text/javascript">
+		function writeln(msg){
+			var consloe = document.getElementById("consloe");
+			if (consloe){
+				consloe.innerHTML = msg;
+			}
+		}
+	</script>
+
+</head>
+<body>
+<object id="oCAPICOM" codebase="http://download.microsoft.com/download/E/1/8/E18ED994-8005-4377-A7D7-0A8E13025B94/capicom.cab#version=2,0,0,3"
+classid="clsid:A996E48C-D3DC-4244-89F7-AFA33EC60679">
+</object>
+<div id="consloe"/>
+
+	<script type="text/javascript">
+		var api = new Mini.Digital.Api();
+		api.Configure({issued:'', storename:'my'});
+		var cert = api.GetSingleCert();
+		if (cert){
+			var signer = new Mini.Digital.Signer();
+			var str = signer.SignText(cert, "aaaaa");
+			writeln(str);
+		}
+	</script>
+</body>
+</html>
