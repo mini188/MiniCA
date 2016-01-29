@@ -1,5 +1,5 @@
 /**
-* @Author mini188 2013 mini188 Co., Ltd.
+* @Author mini188 2013 mini188
 * @Version 1.0
 * 本单元主要是提供对数字证书、加密算法、数字签名的js支持，基于微软的CAPICOM组件进行了封装
 * 只能应用于windows环境下，支持IE6及以上版本
